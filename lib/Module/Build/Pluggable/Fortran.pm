@@ -4,7 +4,7 @@ package Module::Build::Pluggable::Fortran;
 
 use strict;
 use warnings;
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 use parent qw{Module::Build::Pluggable::Base};
 
 BEGIN {
@@ -42,6 +42,7 @@ sub HOOK_configure {
 
 sub HOOK_build {
     my ($self) = @_;
+    my $builder = $self->builder;
 
     my $mycompiler = ExtUtils::F77->compiler();
     my $mycflags   = ExtUtils::F77->cflags();
@@ -51,16 +52,22 @@ sub HOOK_build {
     for my $f_src_file (@$f_src_files) {
         ( my $file = $f_src_file ) =~ s{\.f$}{};
 
-        my @cmd = (
-            $mycompiler, '-c', '-o', "$file.o", ( $mycflags || () ),
-            "-O3", "-fPIC", "$file.f"
-        );
+        # Both $self->up_to_date is undocumented and could change in the
+        # future:
+        my $up_to_date = $builder->up_to_date( $f_src_file, ["$file.o"] );
+        if ( not $up_to_date ) {
 
-        warn join( " ", @cmd ), "\n";
-        $self->builder->do_system(@cmd)
-          or die "error compiling $file";
+            my @cmd = (
+                $mycompiler, '-c', '-o', "$file.o", ( $mycflags || () ),
+                "-O3", "-fPIC", "$file.f"
+            );
 
-        $self->builder->add_to_cleanup("$file.o");
+            warn join( " ", @cmd ), "\n";
+            $builder->do_system(@cmd)
+              or die "error compiling $file";
+        }
+
+        $builder->add_to_cleanup("$file.o");
     }
 
     return 1;
