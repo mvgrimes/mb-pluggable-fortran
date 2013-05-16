@@ -1,4 +1,7 @@
 Changes for Module::Build::Pluggable::Fortran
 
+0.21 - Thu May 16 15:40:22 EDT 2013
+    Skips compile if .o files are up to date
+
 0.20 - Thu May 16 12:19:47 EDT 2013
     Initial release
