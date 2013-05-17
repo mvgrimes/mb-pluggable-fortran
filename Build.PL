@@ -14,8 +14,10 @@ my $build = Module::Build->new(
     },
 
     test_requires => {
-        'Test::More' => 0.87,
-        'IPC::Cmd'   => 0,
+        'Test::More'      => 0.87,
+        'IPC::Cmd'        => 0,
+        'Path::Class'     => 0,
+        'List::MoreUtils' => 0,
     },
 
     meta_merge => {
