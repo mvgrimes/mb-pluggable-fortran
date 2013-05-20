@@ -4,12 +4,18 @@ use Test::More;
 use Path::Class;
 use List::MoreUtils qw(any);
 use IPC::Cmd qw(run);
+use Config;
 
 BEGIN {
+    ## Create an empty t/var dir
     my $var = dir('t/var');
     $var->rmtree;
     $var->mkpath;
-    chdir $var;
+
+    ## Cd into it
+    chdir $var or die "Unable to cd into $var: $!";
+
+    ## Create a MANIFEST file and test .f file in src/
     file('MANIFEST')->spew('');
     dir('src')->mkpath;
     file('src/test.f')->spew(<<'F_FILE');
@@ -18,8 +24,9 @@ BEGIN {
 F_FILE
 }
 
-use Module::Build::Pluggable ('Fortran');
+skip_if_no_fortran_compiler();
 
+use Module::Build::Pluggable ('Fortran');
 my $builder = Module::Build::Pluggable->new(
     dist_name      => 'Eg',
     dist_version   => 0.01,
@@ -30,27 +37,40 @@ my $builder = Module::Build::Pluggable->new(
     provides       => {},
     author         => 1,
     dist_author    => 'test',
-    f_source       => [ 'src' ],
+    f_source       => ['src'],
 );
 $builder->create_build_script();
-is( @{ $builder->f_source }, 1, "added fortran source dir" );
+is( @{ $builder->f_source },     1,     "added fortran source dir" );
 is( pop @{ $builder->f_source }, 'src', "... which is src" );
 ok( -f 'Build', 'Build file created' );
 
-run_ok( './Build', 'Ran Build' );
+run_ok( 'Build', 'Ran Build' );
 ok( -f 'src/test.o', '.. fortran file compiled' );
 
-run_ok( './Build clean', 'Ran Build clean' );
-ok( ! -f 'src/test.o', '.. object file cleaned up' );
+run_ok( 'Build clean', 'Ran Build clean' );
+ok( !-f 'src/test.o', '.. object file cleaned up' );
 
 done_testing;
 
 sub run_ok {
     my ( $cmd, $desc ) = @_;
 
+    # Execute with the current perl, this avoids having to deal with relative
+    # path issues on a different OS
+    $cmd = sprintf "%s %s", $Config{perlpath}, $cmd;
+
     my $buffer;
     my $ok =
       ok( run( command => $cmd, verbose => 0, buffer => \$buffer ), $desc );
     diag $buffer unless $ok;
     return $ok;
+}
+
+sub skip_if_no_fortran_compiler {
+    eval { require ExtUtils::F77; };
+    plan( skip_all => 'Tests require ExtUtils::F77 be installed' ) && exit
+      if $@;
+    plan( skip_all => 'Tests require fortran compiler' ) && exit
+      unless ExtUtils::F77->runtimeok
+      and ExtUtils::F77->testcompiler;
 }

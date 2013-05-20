@@ -4,7 +4,7 @@ package Module::Build::Pluggable::Fortran;
 
 use strict;
 use warnings;
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 use parent qw{Module::Build::Pluggable::Base};
 
 BEGIN {
@@ -116,11 +116,11 @@ __END__
 
 =head1 NAME
 
-Module::Build::Pluggable::PDL - Plugin to Module::Build to build PDL projets
+Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran C<.f> files
 
 =head1 VERSION
 
-version 0.20
+version 0.22
 
 =head1 SYNOPSIS
 

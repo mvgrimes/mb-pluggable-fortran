@@ -1,10 +1,10 @@
 # NAME
 
-Module::Build::Pluggable::PDL - Plugin to Module::Build to build PDL projets
+Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran `.f` files
 
 # VERSION
 
-version 0.20
+version 0.22
 
 # SYNOPSIS
 

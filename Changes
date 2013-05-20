@@ -1,5 +1,10 @@
 Changes for Module::Build::Pluggable::Fortran
 
+0.22 - Mon May 20 09:40:16 EDT 2013
+    Fixes build/test issues on some platforms
+    - Skips tests if no fortran compiler installed
+    - Adds missing prereqs for testing
+
 0.21 - Thu May 16 15:40:22 EDT 2013
     Skips compile if .o files are up to date
 
