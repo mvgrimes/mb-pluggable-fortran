@@ -5,7 +5,7 @@ my $build = Module::Build->new(
     create_readme => 1,
 
     configure_requires => {
-        'Module::Build' => '0.40004',
+        'Module::Build' => '0.4005',
     },
 
     requires => {
