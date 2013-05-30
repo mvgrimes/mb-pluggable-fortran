@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.40004"
+            "Module::Build" : "0.4005"
          }
       },
       "runtime" : {
@@ -29,7 +29,7 @@
    "provides" : {
       "Module::Build::Pluggable::Fortran" : {
          "file" : "lib/Module/Build/Pluggable/Fortran.pm",
-         "version" : "0.22"
+         "version" : "0.23"
       }
    },
    "release_status" : "stable",
@@ -44,7 +44,7 @@
          "url" : "http://github.com/mvgrimes/mb-pluggable-fortran"
       }
    },
-   "version" : "0.22",
+   "version" : "0.23",
    "x_test_requires" : {
       "IPC::Cmd" : "0",
       "List::MoreUtils" : "0",
