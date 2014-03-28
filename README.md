@@ -4,7 +4,7 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 # VERSION
 
-version 0.23
+version 0.24
 
 # SYNOPSIS
 
@@ -29,9 +29,9 @@ version 0.23
 
 # DESCRIPTION
 
-This is a plugin for [Module::Build](http://search.cpan.org/perldoc?Module::Build) (using [Module::Build::Pluggable](http://search.cpan.org/perldoc?Module::Build::Pluggable)) that
+This is a plugin for [Module::Build](https://metacpan.org/pod/Module::Build) (using [Module::Build::Pluggable](https://metacpan.org/pod/Module::Build::Pluggable)) that
 will assist in building distributions that require Fortran `.f` files to be
-compiled. Please see the [Module::Build::Authoring](http://search.cpan.org/perldoc?Module::Build::Authoring) documentation if you are
+compiled. Please see the [Module::Build::Authoring](https://metacpan.org/pod/Module::Build::Authoring) documentation if you are
 not familiar with it.
 
 - Add Prerequisites
@@ -65,7 +65,7 @@ not familiar with it.
 
 # SEE ALSO
 
-[Module::Build::Pluggable](http://search.cpan.org/perldoc?Module::Build::Pluggable), [Module::Build](http://search.cpan.org/perldoc?Module::Build)
+[Module::Build::Pluggable](https://metacpan.org/pod/Module::Build::Pluggable), [Module::Build](https://metacpan.org/pod/Module::Build)
 
 # AUTHOR
 
@@ -73,7 +73,7 @@ Mark Grimes, <mgrimes@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Mark Grimes, <mgrimes@cpan.org>.
+This software is copyright (c) 2014 by Mark Grimes, <mgrimes@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

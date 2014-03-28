@@ -1,5 +1,8 @@
 Changes for Module::Build::Pluggable::Fortran
 
+0.24 - Fri Mar 28 08:32:57 EDT 2014
+    Skips tests if no fortran compiler is installed
+
 0.23 - Thu May 30 08:38:51 EDT 2013
     Fixes a typo in the Module::Build required version
     - This is a mirror of RT#85721 found by ANDK++. Thanks.

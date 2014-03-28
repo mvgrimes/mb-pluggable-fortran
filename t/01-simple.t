@@ -7,6 +7,16 @@ use IPC::Cmd qw(run);
 use Config;
 
 BEGIN {
+
+    sub skip_if_no_fortran_compiler {
+        eval { require ExtUtils::F77; };
+        plan( skip_all => 'Tests require ExtUtils::F77 be installed' ) && exit
+          if $@;
+        plan( skip_all => 'Tests require fortran compiler' ) && exit
+          unless ExtUtils::F77->runtimeok
+          and ExtUtils::F77->testcompiler;
+    }
+
     ## Create an empty t/var dir
     my $var = dir('t/var');
     $var->rmtree;
@@ -22,9 +32,9 @@ BEGIN {
 	print *, 'Hello World'
 	end
 F_FILE
-}
 
-skip_if_no_fortran_compiler();
+    skip_if_no_fortran_compiler();
+}
 
 use Module::Build::Pluggable ('Fortran');
 my $builder = Module::Build::Pluggable->new(
@@ -64,13 +74,4 @@ sub run_ok {
       ok( run( command => $cmd, verbose => 0, buffer => \$buffer ), $desc );
     diag $buffer unless $ok;
     return $ok;
-}
-
-sub skip_if_no_fortran_compiler {
-    eval { require ExtUtils::F77; };
-    plan( skip_all => 'Tests require ExtUtils::F77 be installed' ) && exit
-      if $@;
-    plan( skip_all => 'Tests require fortran compiler' ) && exit
-      unless ExtUtils::F77->runtimeok
-      and ExtUtils::F77->testcompiler;
 }

@@ -4,7 +4,7 @@
       "Mark Grimes, E<lt>mgrimes@cpan.orgE<gt>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -21,15 +21,15 @@
       },
       "runtime" : {
          "requires" : {
-            "ExtUtils::F77" : 0,
-            "Module::Build::Pluggable::Base" : 0
+            "ExtUtils::F77" : "0",
+            "Module::Build::Pluggable::Base" : "0"
          }
       }
    },
    "provides" : {
       "Module::Build::Pluggable::Fortran" : {
          "file" : "lib/Module/Build/Pluggable/Fortran.pm",
-         "version" : "0.23"
+         "version" : "0.24"
       }
    },
    "release_status" : "stable",
@@ -44,7 +44,7 @@
          "url" : "http://github.com/mvgrimes/mb-pluggable-fortran"
       }
    },
-   "version" : "0.23",
+   "version" : "0.24",
    "x_test_requires" : {
       "IPC::Cmd" : "0",
       "List::MoreUtils" : "0",
