@@ -9,6 +9,7 @@ my $build = Module::Build->new(
     },
 
     requires => {
+        'perl'                           => '5.008',
         'Module::Build::Pluggable::Base' => 0,
         'ExtUtils::F77'                  => 0,
     },
