@@ -4,7 +4,7 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 # VERSION
 
-version 0.24
+version 0.25
 
 # SYNOPSIS
 

@@ -22,14 +22,15 @@
       "runtime" : {
          "requires" : {
             "ExtUtils::F77" : "0",
-            "Module::Build::Pluggable::Base" : "0"
+            "Module::Build::Pluggable::Base" : "0",
+            "perl" : "5.008"
          }
       }
    },
    "provides" : {
       "Module::Build::Pluggable::Fortran" : {
          "file" : "lib/Module/Build/Pluggable/Fortran.pm",
-         "version" : "0.24"
+         "version" : "0.25"
       }
    },
    "release_status" : "stable",
@@ -44,7 +45,7 @@
          "url" : "http://github.com/mvgrimes/mb-pluggable-fortran"
       }
    },
-   "version" : "0.24",
+   "version" : "0.25",
    "x_test_requires" : {
       "IPC::Cmd" : "0",
       "List::MoreUtils" : "0",

@@ -1,5 +1,9 @@
 Changes for Module::Build::Pluggable::Fortran
 
+0.25 - Sat Aug  9 10:09:56 EDT 2014
+    Adds minimum perl version to the prereqs
+    Updates the distribution meta files and preps for release
+
 0.24 - Fri Mar 28 08:32:57 EDT 2014
     Skips tests if no fortran compiler is installed
 

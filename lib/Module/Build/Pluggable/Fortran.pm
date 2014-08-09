@@ -4,7 +4,7 @@ package Module::Build::Pluggable::Fortran;
 
 use strict;
 use warnings;
-our $VERSION = '0.24';
+our $VERSION = '0.25';
 use parent qw{Module::Build::Pluggable::Base};
 
 BEGIN {
@@ -120,7 +120,7 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
