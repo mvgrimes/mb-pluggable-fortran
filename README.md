@@ -4,14 +4,14 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 # VERSION
 
-version 0.25
+version 0.26
 
 # SYNOPSIS
 
     # Build.PL
     use strict;
     use warnings;
-    use Module::Build::Pluggable ('PDL');
+    use Module::Build::Pluggable ('Fortran');
 
     my $builder = Module::Build::Pluggable->new(
         dist_name  => 'PDL::My::Module',
@@ -46,8 +46,9 @@ not familiar with it.
 
 - Compile `.f` files
 
-    The `lib` directory of your distribution will be searched for `.f` files
-    and, immediately prior to the build phase, compiles them into `.o` files.
+    The directories specified by the f\_source array within your distribution will
+    be searched for `.f` files which are, immediately prior to the build phase,
+    compiled into `.o` files.
     This is accomplished (effectively) by running:
 
         my $mycompiler = ExtUtils::F77->compiler();
@@ -69,11 +70,11 @@ not familiar with it.
 
 # AUTHOR
 
-Mark Grimes, <mgrimes@cpan.org>
+Mark Grimes, &lt;mgrimes@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Mark Grimes, <mgrimes@cpan.org>.
+This software is copyright (c) 2016 by Mark Grimes, &lt;mgrimes@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,5 +1,12 @@
 Changes for Module::Build::Pluggable::Fortran
 
+0.26 - Tue Jan 26 13:49:57 EST 2016
+    Fixes bug when adding linker flags; thanks to Luis Mochan for the patch
+    Fixes erroneous documentation; thanks to Luis Mochan for the bug report
+    Switches to the github issues tracker
+    Updates the distribution meta files and preps for release
+    Adds minimum perl version to the prereqs
+
 0.25 - Sat Aug  9 10:09:56 EDT 2014
     Adds minimum perl version to the prereqs
     Updates the distribution meta files and preps for release

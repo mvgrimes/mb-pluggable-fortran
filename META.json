@@ -30,13 +30,13 @@
    "provides" : {
       "Module::Build::Pluggable::Fortran" : {
          "file" : "lib/Module/Build/Pluggable/Fortran.pm",
-         "version" : "0.25"
+         "version" : "0.26"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-Build-Pluggable-Fortran"
+         "web" : "https://github.com/mvgrimes/mb-pluggable-fortran/issues"
       },
       "license" : [
          "http://dev.perl.org/licenses/"
@@ -45,7 +45,7 @@
          "url" : "http://github.com/mvgrimes/mb-pluggable-fortran"
       }
    },
-   "version" : "0.25",
+   "version" : "0.26",
    "x_test_requires" : {
       "IPC::Cmd" : "0",
       "List::MoreUtils" : "0",
