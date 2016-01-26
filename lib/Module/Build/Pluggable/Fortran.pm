@@ -32,8 +32,8 @@ sub HOOK_configure {
     $self->build_requires( 'ExtUtils::F77'      => 0 );
     $self->build_requires( 'ExtUtils::CBuilder' => '0.23' );
 
-    $self->_add_extra_linker_flags( ExtUtils::F77->runtime,
-        @{ $self->_fortran_obj_files } );
+    my @runtime = split / /, ExtUtils::F77->runtime;
+    $self->_add_extra_linker_flags( @runtime, @{ $self->_fortran_obj_files } );
 
     $self->builder->add_to_cleanup('f77_underscore');
 
