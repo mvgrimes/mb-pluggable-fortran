@@ -24,7 +24,7 @@ my $build = Module::Build->new(
     meta_merge => {
         resources => {
             bugtracker =>
-              'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-Build-Pluggable-Fortran',
+              'https://github.com/mvgrimes/mb-pluggable-fortran/issues',
             repository => 'http://github.com/mvgrimes/mb-pluggable-fortran'
         }
     },
