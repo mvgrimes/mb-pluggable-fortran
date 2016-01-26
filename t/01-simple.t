@@ -9,12 +9,19 @@ use Config;
 BEGIN {
 
     sub skip_if_no_fortran_compiler {
-        eval { require ExtUtils::F77; };
-        plan( skip_all => 'Tests require ExtUtils::F77 be installed' ) && exit
-          if $@;
-        plan( skip_all => 'Tests require fortran compiler' ) && exit
-          unless ExtUtils::F77->runtimeok
-          and ExtUtils::F77->testcompiler;
+        eval "use ExtUtils::F77";
+        if ($@) {
+            plan( skip_all => 'Tests require ExtUtils::F77 be installed.' );
+            exit;
+        }
+        unless ( ExtUtils::F77->runtimeok ) {
+            plan( skip_all => 'Tests require fortran runtime work.' );
+            exit;
+        }
+        unless ( ExtUtils::F77->testcompiler ) {
+            plan( skip_all => 'Tests require fortran compiler work.' );
+            exit;
+        }
     }
 
     ## Create an empty t/var dir
