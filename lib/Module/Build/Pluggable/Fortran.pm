@@ -127,7 +127,7 @@ version 0.25
     # Build.PL
     use strict;
     use warnings;
-    use Module::Build::Pluggable ('PDL');
+    use Module::Build::Pluggable ('Fortran');
 
     my $builder = Module::Build::Pluggable->new(
         dist_name  => 'PDL::My::Module',
@@ -164,8 +164,9 @@ to C<requires => {}> as usual.
 
 =item Compile C<.f> files
 
-The C<lib> directory of your distribution will be searched for C<.f> files
-and, immediately prior to the build phase, compiles them into C<.o> files.
+The directories specified by the f_source array within your distribution will
+be searched for C<.f> files which are, immediately prior to the build phase,
+compiled into C<.o> files.
 This is accomplished (effectively) by running:
 
     my $mycompiler = ExtUtils::F77->compiler();
