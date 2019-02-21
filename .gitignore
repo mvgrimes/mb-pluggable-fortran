@@ -49,3 +49,5 @@ Module-Build-Pluggable-*
 t/data
 t/var
 nytprof*
+local/
+.perl-version
