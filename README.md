@@ -4,7 +4,7 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 # VERSION
 
-version 0.26
+version 0.27
 
 # SYNOPSIS
 
@@ -70,11 +70,11 @@ not familiar with it.
 
 # AUTHOR
 
-Mark Grimes, &lt;mgrimes@cpan.org>
+Mark Grimes, <mgrimes@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Mark Grimes, &lt;mgrimes@cpan.org>.
+This software is copyright (c) 2019 by Mark Grimes, <mgrimes@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

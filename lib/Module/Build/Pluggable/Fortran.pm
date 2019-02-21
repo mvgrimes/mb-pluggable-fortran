@@ -4,7 +4,7 @@ package Module::Build::Pluggable::Fortran;
 
 use strict;
 use warnings;
-our $VERSION = '0.26';
+our $VERSION = '0.27';
 use parent qw{Module::Build::Pluggable::Base};
 use Text::ParseWords qw(shellwords);
 
@@ -121,7 +121,7 @@ Module::Build::Pluggable::Fortran - Plugin for Module::Build to compile Fortran 
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 SYNOPSIS
 
@@ -195,7 +195,7 @@ Mark Grimes, E<lt>mgrimes@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Mark Grimes, E<lt>mgrimes@cpan.orgE<gt>.
+This software is copyright (c) 2019 by Mark Grimes, E<lt>mgrimes@cpan.orgE<gt>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

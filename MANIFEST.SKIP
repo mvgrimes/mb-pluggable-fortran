@@ -47,3 +47,6 @@ TODO
 
 # Repo specific:
 ^Module-Build-Pluggable-.*
+^local/
+^t/var/
+^\.perl-version
