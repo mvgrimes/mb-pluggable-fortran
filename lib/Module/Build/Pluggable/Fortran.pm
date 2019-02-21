@@ -6,6 +6,7 @@ use strict;
 use warnings;
 our $VERSION = '0.26';
 use parent qw{Module::Build::Pluggable::Base};
+use Text::ParseWords qw(shellwords);
 
 BEGIN {
     eval "use ExtUtils::F77";
@@ -32,7 +33,7 @@ sub HOOK_configure {
     $self->build_requires( 'ExtUtils::F77'      => 0 );
     $self->build_requires( 'ExtUtils::CBuilder' => '0.23' );
 
-    my @runtime = split / /, ExtUtils::F77->runtime;
+    my @runtime = shellwords(ExtUtils::F77->runtime);
     $self->_add_extra_linker_flags( @runtime, @{ $self->_fortran_obj_files } );
 
     $self->builder->add_to_cleanup('f77_underscore');
